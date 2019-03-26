@@ -1,4 +1,4 @@
-package kr.co.woobi.imyeon.networkexam;
+package kr.co.woobi.imyeon.networkexam.service;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
-public interface JsonplaceholderService {
-    @GET("/posts/{id}")
-    Call<List<Photo>> listPhots1(@Path("id") int id);
+public interface PhotoService {
+    @GET("posts/{id}")
+    Call<Photo> listPhots1(@Path("id") int id);
 
 
     @GET("photos")

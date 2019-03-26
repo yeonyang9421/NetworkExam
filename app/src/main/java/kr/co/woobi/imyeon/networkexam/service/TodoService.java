@@ -1,4 +1,4 @@
-package kr.co.woobi.imyeon.networkexam;
+package kr.co.woobi.imyeon.networkexam.service;
 
 import java.util.List;
 

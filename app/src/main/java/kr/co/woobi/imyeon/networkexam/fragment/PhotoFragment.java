@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import kr.co.woobi.imyeon.networkexam.JsonplaceholderService;
+import kr.co.woobi.imyeon.networkexam.service.PhotoService;
 import kr.co.woobi.imyeon.networkexam.R;
 import kr.co.woobi.imyeon.networkexam.adapter.PhotoRecyclerAdapter;
 import kr.co.woobi.imyeon.networkexam.model.Photo;
@@ -62,7 +62,7 @@ public class PhotoFragment extends Fragment {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        JsonplaceholderService service = retrofit.create(JsonplaceholderService.class);
+        PhotoService service = retrofit.create(PhotoService.class);
         service.listPhots(mId).enqueue(new Callback<List<Photo>>() {
             @Override
             public void onResponse(Call<List<Photo>> call, Response<List<Photo>> response) {

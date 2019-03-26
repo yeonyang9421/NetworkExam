@@ -6,8 +6,6 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 
-import kr.co.woobi.imyeon.networkexam.model.Photo;
-
 public class TransitionTargetActivity extends AppCompatActivity {
     ImageView imageView;
 
@@ -17,10 +15,11 @@ public class TransitionTargetActivity extends AppCompatActivity {
         setContentView(R.layout.activity_transition_target);
         imageView=findViewById(R.id.imageView);
 
-        Photo photo=new Photo();
+//        Photo photo=new Photo();
+        String url = getIntent().getStringExtra("image");
 
         Glide.with(this)
-                .load(photo.getThumbnailUrl())
+                .load(url)
                 .centerCrop()
                 .placeholder(R.mipmap.ic_launcher)
                 .into(this.imageView);

@@ -38,7 +38,7 @@ public class SecondActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         int id = intent.getIntExtra("id", 0);
-        Toast.makeText(this, "SecondActivity"+id, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "SecondActivity" + id, Toast.LENGTH_SHORT).show();
 
 //        PhotoFragment fragment = PhotoFragment.newInstance(id);
 
@@ -51,17 +51,14 @@ public class SecondActivity extends AppCompatActivity {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageEvent(EventImageResize event) {
-        String imageUrl=event.photo.getThumbnailUrl();
-        Toast.makeText(this, "" +event, Toast.LENGTH_LONG).show();
+
+        String imageUrl = event.photo.getUrl();
+        Toast.makeText(this, "" + event, Toast.LENGTH_LONG).show();
 
         Intent intent = new Intent(this, TransitionTargetActivity.class);
-        intent.putExtra("image",imageUrl);
+        intent.putExtra("image", imageUrl);
         startActivity(intent);
-//        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this,   ,"ani");
-//        ActivityCompat.startActivity(this,intent,options.toBundle());
-
     }
-
 
     @Override
     public void onStart() {
@@ -74,5 +71,4 @@ public class SecondActivity extends AppCompatActivity {
         super.onStop();
         EventBus.getDefault().unregister(this);
     }
-
 }

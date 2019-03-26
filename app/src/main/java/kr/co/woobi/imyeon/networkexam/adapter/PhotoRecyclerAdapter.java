@@ -70,7 +70,6 @@ public class PhotoRecyclerAdapter extends RecyclerView.Adapter<PhotoRecyclerAdap
                 EventBus.getDefault().post(new EventImageResize(mItems.get(viewHolder.getAdapterPosition())));
             }
         });
-
     }
 
     @Override

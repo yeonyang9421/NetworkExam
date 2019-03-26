@@ -15,7 +15,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import kr.co.woobi.imyeon.networkexam.R;
-import kr.co.woobi.imyeon.networkexam.UserService;
+import kr.co.woobi.imyeon.networkexam.service.UserService;
 import kr.co.woobi.imyeon.networkexam.adapter.UserRecyclerAdapter;
 import kr.co.woobi.imyeon.networkexam.model.Users;
 import retrofit2.Call;

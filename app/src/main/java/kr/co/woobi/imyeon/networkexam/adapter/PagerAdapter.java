@@ -21,7 +21,6 @@ public  class PagerAdapter extends FragmentPagerAdapter {
 //            mData.add(PhotoFragment.newInstance(1));
 //            mData.add(TodosFragment.newInstance(1));
 
-
     }
 
     @Override
