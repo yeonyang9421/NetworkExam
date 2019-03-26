@@ -38,11 +38,13 @@ public class SecondActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         int id = intent.getIntExtra("id", 0);
-        Toast.makeText(this, ""+id, Toast.LENGTH_SHORT).show();
-        PhotoFragment.newInstance(id);
-        TodosFragment.newInstance(id);
+        Toast.makeText(this, "SecondActivity"+id, Toast.LENGTH_SHORT).show();
+
+//        PhotoFragment fragment = PhotoFragment.newInstance(id);
 
         PagerAdapter pageradapter = new PagerAdapter(getSupportFragmentManager());
+        pageradapter.addItem(PhotoFragment.newInstance(id));
+        pageradapter.addItem(TodosFragment.newInstance(id));
         viewPager.setAdapter(pageradapter);
         tabLayout.setupWithViewPager(viewPager);
     }

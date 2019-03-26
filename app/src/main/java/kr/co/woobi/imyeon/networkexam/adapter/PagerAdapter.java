@@ -8,20 +8,19 @@ import android.support.v4.app.FragmentPagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import kr.co.woobi.imyeon.networkexam.fragment.PhotoFragment;
-import kr.co.woobi.imyeon.networkexam.fragment.TodosFragment;
-
 public  class PagerAdapter extends FragmentPagerAdapter {
-    private List<Fragment> mData;
+    private List<Fragment> mData =new ArrayList<>();
+
+    public void addItem(Fragment fragment) {
+        mData.add(fragment);
+    }
 
     public PagerAdapter(FragmentManager fm) {
         super(fm);
 //
 //            mData.add(PhotoFragment.newInstance(1));
 //            mData.add(TodosFragment.newInstance(1));
-        mData=new ArrayList<>();
-        mData.add(new PhotoFragment());
-        mData.add(new TodosFragment());
+
 
     }
 

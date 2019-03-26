@@ -25,7 +25,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class TodosFragment extends Fragment {
-    public int mId=2;
+    private int mId=2;
     private static final String TAG = TodosFragment.class.getSimpleName();
     private ProgressBar mProgressBar;
     private RecyclerView mRecycler;
@@ -46,7 +46,7 @@ public class TodosFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if(getArguments()!=null){
-            mId=getArguments().getInt("id");
+            mId=getArguments().getInt("id",0);
 
         }
     }

@@ -25,7 +25,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class PhotoFragment extends Fragment {
-    public int mId = 2;
+    private int mId = 2;
     private static final String TAG = PhotoFragment.class.getSimpleName();
     private ProgressBar mProgressBar;
     private RecyclerView mRecycler;
@@ -43,7 +43,8 @@ public class PhotoFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mId = getArguments().getInt("id");
+            mId = getArguments().getInt("id",0);
+            Toast.makeText(getContext(), ""+mId, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -83,7 +84,5 @@ public class PhotoFragment extends Fragment {
         });
         return view;
     }
-
-
 }
 

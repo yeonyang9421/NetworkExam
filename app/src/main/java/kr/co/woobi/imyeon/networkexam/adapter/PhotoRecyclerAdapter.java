@@ -67,12 +67,7 @@ public class PhotoRecyclerAdapter extends RecyclerView.Adapter<PhotoRecyclerAdap
         viewHolder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 EventBus.getDefault().post(new EventImageResize(mItems.get(viewHolder.getAdapterPosition())));
-//               mListener.onImageResize(photo.getThumbnailUrl());
-//                Intent intent = new Intent(v.getContext(), TransitionTargetActivity.class);
-//                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(v.getContext(), v, "ani");
-//                ActivityCompat.startActivity(this,intent,options.toBundle());
             }
         });
 

@@ -10,11 +10,11 @@ import retrofit2.http.Query;
 
 public interface TodoService {
     @GET("/posts/{id}")
-    Call<Todos> listTodo1(@Path("id") int id);
+    Call<List<Todos>> listTodo1(@Path("id") int id);
 
 
 
     @GET("todos")
-    Call<List<Todos>> listTodo(@Query("id") int id);
+    Call<List<Todos>> listTodo(@Query("userId") int id);
 
 }

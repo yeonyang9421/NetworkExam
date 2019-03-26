@@ -11,11 +11,11 @@ import retrofit2.http.Query;
 
 public interface JsonplaceholderService {
     @GET("/posts/{id}")
-    Call<Photo> listPhots1(@Path("id") int id);
+    Call<List<Photo>> listPhots1(@Path("id") int id);
 
 
     @GET("photos")
-    Call<List<Photo>> listPhots(@Query("id") int id);
+    Call<List<Photo>> listPhots(@Query("albumId") int id);
 
 
 }
